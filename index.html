@@ -3,7 +3,6 @@ layout: default
 ---
 
 {% include career-profile.html %}
-
 {% include analytical-methods.html %}
 
 {% unless site.data.data.sidebar.education %}
@@ -12,154 +11,90 @@ layout: default
 
 {% include experiences.html %}
 
-<p class="student-author-note"
-   style="font-size: 0.85em; color: #777;
-          margin-top: 4px; margin-bottom: 16px;">
+<p class="student-note">
   &#42; Denotes student co-author/mentee.
 </p>
 
 {% include awards.html %}
-
 {% include media.html %}
 
 <style>
-  /* CLICKABLE RESEARCH TOPIC TITLES */
-
-  .research-topic-toggle {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 9px;
-    padding: 0;
+  .research-toggle {
+    background: none;
     border: 0;
-    background: transparent;
+    padding: 0;
     color: inherit;
     font: inherit;
     font-weight: inherit;
-    text-align: left;
     cursor: pointer;
+    text-align: left;
   }
 
-  .research-topic-toggle:hover,
-  .research-topic-toggle:focus-visible {
-    color: #16839a;
-  }
+  .research-toggle:hover { color: #16839a; }
 
-  .research-topic-toggle:focus-visible {
+  .research-toggle:focus-visible {
     outline: 2px solid #16839a;
-    outline-offset: 4px;
+    outline-offset: 3px;
   }
 
-  /* SMALL CHEVRON AFTER EACH TITLE */
-
-  .research-topic-toggle::after {
-    content: "";
+  .research-toggle::after {
+    content: "⌄";
     display: inline-block;
-    flex: 0 0 7px;
-    width: 7px;
-    height: 7px;
-    border-right: 1.5px solid currentColor;
-    border-bottom: 1.5px solid currentColor;
-    transform: translateY(-2px) rotate(45deg);
-    transition: transform 0.2s ease;
-    opacity: 0.7;
+    margin-left: 8px;
+    transition: transform .2s;
   }
 
-  .research-topic-toggle[aria-expanded="true"]::after {
-    transform: translateY(2px) rotate(225deg);
+  .research-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
   }
 
-  /* HIDDEN PUBLICATIONS AND PRESENTATIONS */
+  .research-pubs[hidden] { display: none !important; }
+  .research-pubs { margin-top: 12px; }
 
-  .research-work-content {
-    margin-top: 12px;
-    padding: 0;
+  .student-note {
+    font-size: .85em;
+    color: #777;
+    margin: 4px 0 16px !important;
   }
 
-  .research-work-content[hidden] {
-    display: none !important;
-  }
-
-  /* PRESERVE CITATION FORMATTING */
-
-  .research-work-content .reference {
-    margin-left: 24px;
-    margin-bottom: 12px;
-  }
-
-  /* REDUCE SPACE BEFORE STUDENT NOTE */
-
-  .student-author-note {
-    margin-top: 4px !important;
-    margin-bottom: 16px !important;
-  }
-
-  .experiences-section:has(+ .student-author-note) {
+  .experiences-section:has(+ .student-note) {
     margin-bottom: 4px;
-  }
-
-  .experiences-section:has(+ .student-author-note)
-  > .item:last-child {
-    margin-bottom: 0;
   }
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-
-  /* APPLY TO ALL RESEARCH TOPICS IN BOTH SECTIONS */
-
-  document.querySelectorAll(
-    '.experiences-section .item'
-  ).forEach(function(item, index) {
-
-    var work = item.querySelector('.selected-work');
-    var heading = item.querySelector('h3.job-title');
-
-    if (!work || !heading) return;
-
-    var references = work.querySelectorAll('.reference');
-    if (!references.length) return;
-
-    /* CREATE CLICKABLE RESEARCH TITLE */
-
-    var button = document.createElement('button');
-    button.type = 'button';
-    button.className = 'research-topic-toggle';
-    button.innerHTML = heading.innerHTML;
-
-    button.setAttribute('aria-expanded', 'false');
-
-    /* CREATE COLLAPSED PUBLICATION CONTAINER */
-
-    var content = document.createElement('div');
-    content.className = 'research-work-content';
-    content.id = 'research-work-' + index;
-    content.hidden = true;
-
-    references.forEach(function(reference) {
-      content.appendChild(reference);
-    });
-
-    button.setAttribute('aria-controls', content.id);
-
-    heading.replaceChildren(button);
-    work.replaceWith(content);
-
-    /* CLICK TO EXPAND OR COLLAPSE */
-
-    button.addEventListener('click', function() {
-      var expanded =
-        button.getAttribute('aria-expanded') === 'true';
-
-      content.hidden = expanded;
-
-      button.setAttribute(
-        'aria-expanded',
-        String(!expanded)
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.experiences-section .item')
+    .forEach((item, i) => {
+      const title = item.querySelector('h3.job-title');
+      const work = item.querySelector(
+        '.selected-work, .selected-work-collapse'
       );
+
+      if (!title || !work) return;
+
+      const pubs = document.createElement('div');
+      pubs.className = 'research-pubs';
+      pubs.id = `pubs-${i}`;
+      pubs.hidden = true;
+
+      pubs.append(...work.querySelectorAll('.reference'));
+      if (!pubs.children.length) return;
+
+      work.replaceWith(pubs);
+
+      const button = document.createElement('button');
+      button.className = 'research-toggle';
+      button.type = 'button';
+      button.textContent = title.textContent.trim();
+      button.setAttribute('aria-expanded', 'false');
+      button.setAttribute('aria-controls', pubs.id);
+      title.replaceChildren(button);
+
+      button.onclick = () => {
+        pubs.hidden = !pubs.hidden;
+        button.setAttribute('aria-expanded', !pubs.hidden);
+      };
     });
-
-  });
-
 });
 </script>
