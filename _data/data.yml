@@ -1,0 +1,253 @@
+
+# Be aware that even a small syntax error here can lead to failures in output.
+
+sidebar:
+  position: right
+  about: true
+  education: true
+
+  # Profile information
+  name: "Tomoe Kanaya, PhD"
+  tagline: "Behavioral Researcher|Data Scientist"
+  avatar: "myphoto.jpg"
+
+  linkedin: "https://www.linkedin.com/in/tomoe-kanaya-ph-d-29089115a/"
+  orcid: "https://orcid.org/0000-0002-5105-2893"
+  google_scholar: "https://scholar.google.com/citations?user=9osbCasAAAAJ&hl=en&oi=ao"
+  pdf: 
+
+
+
+
+career-profile:
+  title: Career Profile
+  summary: |
+    I'm an award-winning behavioral researcher and data scientist with over 25 years of experience
+    across academia, industry, and consulting. I examine behavior, cognitive processes, and motivation
+    across the lifespan, and my published research has focused on how these processes change over time
+    and vary across contexts. I've collaborated with engineers, designers, computer scientists,
+    and other stakeholders to inform software product development and evaluate policies. I also
+    help organizations develop data strategies that strengthen their analyses, decision-making,
+    and workflows.
+
+    Rather than presenting a traditional CV, I've organized this website by research area and
+    analytical method, providing selected examples of my publications and presentations to
+    illustrate the breadth of my experience.
+
+  cv_text: "For a complete record of my work, please view my full CV."
+  cv_link: "/assets/pdf/Tomoe_Kanaya_CV.pdf"
+
+
+education:
+  title: Education
+  info:
+    - degree: "PhD"
+      university: "Cornell University"
+      field: "Developmental Psychology"
+      minor: "Minor in Behavioral Statistics"
+      dates: "2004"
+
+    - degree: "BA"
+      university: "Bryn Mawr College"
+      field: "Psychology & English"
+      dates: "1999"
+
+professional_experience:
+  title: "Selected Positions"
+
+  current:
+    - title: "Associate Professor"
+      specialty: "Psychological Science"
+      organization: "Claremont McKenna College"
+
+    - title: "Independent Consultant"
+      specialties:
+        - "UX Research"
+        - "Customer Analytics"
+        - "Policy Evaluation"
+        - "Data Science"
+
+  previous:
+    - title: "AI Decision & Data Scientist"
+      specialty: "Senior Manager"
+      organization: "Accenture Song"
+ 
+
+    - title: "Director"
+      specialty: "Berger Institute for Work, Family and Children"
+      organization: "Claremont McKenna College"
+
+
+    - title: "Research Associate"
+      specialty: "Center for Children and Technology"
+      organization: "Education Development Center, Inc."
+
+
+analytical_methods:
+  title: Research Methods
+  info:
+    - role: AI, Machine Learning & NLP
+      details: |
+        Explore how computational methods can reveal patterns in
+        language, cognition, and behavior. Apply natural language
+        processing and machine learning to analyze complex data and
+        investigate opportunities for AI-supported research and assessment.
+      papers:
+        - citation: >-
+            Kanaya, T., & Kussmaul, C. (2025).
+            Insights from natural language processing of short-response
+            questions in a learning activity. Paper presented at the
+            international meeting of Technology 4 Education, Chennai, India.
+
+        - citation: >-
+            Kanaya, T., & Magine, A. (2024).
+            How can the current state of AI guide future conversations
+            of general intelligence?
+            *Journal of Intelligence, 12*(3), 36–44.
+            DOI: https://doi.org/10.3390/jintelligence12030036
+
+    - role: Statistical & Longitudinal Modeling
+      details: |
+        Use advanced statistical techniques to uncover relationships,
+        examine change over time, and make sense of complex behavioral
+        data. Expertise includes structural equation modeling, growth
+        curve analysis, and propensity score methods.
+      papers:
+        - citation: >-
+            Kanaya, T., Wai, J., & Miranda, B. (2019).
+            Exploring the links between receiving special education
+            services and adulthood outcomes.
+            *Frontiers in Education, 4*, 1–13.
+            DOI: 10.3389/feduc.2019.00056
+
+        - citation: >-
+            Kanaya, T., Ceci, S. J., & Scullin, M. H. (2005).
+            Age differences in secular IQ trends: An individual
+            growth modeling approach.
+            *Intelligence, 33*, 613–621.
+
+    - role: A/B Testing & Research Design
+      details: |
+        Design rigorous studies that uncover how people think, learn,
+        and make decisions. Combine experimental and survey methods
+        to test hypotheses, identify meaningful patterns, and
+        translate findings into evidence-based recommendations.
+      papers:
+        - citation: >-
+            \*Deer, L. K., \*Gohn, K. M., & Kanaya, T. (2018).
+            Anxiety and self-efficacy as sequential predictors of
+            US college students' career preparation.
+            *Education + Training, 60*, 185–197.
+            DOI: 10.1108/ET-07-2017-0096
+
+        - citation: >-
+            Principe, G. F., Kanaya, T., Ceci, S. J., &
+            \*Singh, M. (2006). Believing is seeing: How rumors
+            can engender false memories in preschoolers.
+            *Psychological Science, 17*, 243–248.
+
+experiences:
+  title: Research Applications
+  info:
+    - role: UX & Technology Adoption
+      details: |
+        Examine how program design and user experience influence
+        technology adoption. Compare training formats to identify
+        approaches associated with greater adoption, investigate
+        barriers teachers face when using digital assessment tools,
+        and develop evidence-based recommendations for improvement.
+      papers:
+        - citation: >-
+            Kanaya, T., Light, D., & Culp, K. M. (2005).
+            Factors influencing outcomes from a technology-focused
+            professional development program.
+            *Journal of Research on Technology in Education, 37*, 313–329.
+
+        - citation: >-
+            Martin, W., Heinze, C., Kanaya, T., Perez, H., & Hupert, N.
+            (2005). Trends in use of handheld technology to support
+            student reading assessment. Paper presented at the annual
+            meeting of the Society for Informational Technology and
+            Teacher Education, Phoenix, AZ.
+
+    - role: Measurement & Assessment
+      details: |
+        Develop measures of cognitive processes and motivation, emphasizing validity,
+        reliability, and fairness. Identify scalable assessment practices that accurately
+        measure abilities, behaviors, and outcomes.
+      papers:
+        - citation: >-
+            Kanaya, T., & Ceci, S. J. (2007).
+            Are all IQ scores created equal? The differential costs
+            of IQ cut-off scores for at-risk children.
+            *Child Development Perspectives, 1*, 52–56.
+
+        - citation: >-
+            Scullin, M. H., Kanaya, T., & Ceci, S. J. (2002).
+            Measurement of individual differences in children's
+            suggestibility across situations.
+            *Journal of Experimental Psychology: Applied, 8*, 233–246.
+
+    - role: Program & Policy Evaluation
+      details: |
+        Evaluate the effectiveness and return on investment of
+        programs, identifying opportunities for improvement.
+        Analyze publicly available datasets to investigate
+        policy-related questions, examine outcomes, and inform
+        evidence-based recommendations.
+      papers:
+        - citation: >-
+            Kanaya, T., & \*Osthoff-Magalhaes, I. (2013).
+            *A two-level approach to determine Imagine LA's return
+            on investment: Final Report.*
+            Berger Institute for Work, Family and Children.
+
+        - citation: >-
+            Kanaya, T., Scullin, M.H. & Ceci, S.J. (2003). The Flynn effect and
+            U.S. policies: The impact of rising IQ scores on American society
+            via Mental Retardation diagnoses. *American Psychologist, 58,* 1-13
+
+# ==========================================
+# AWARDS
+# ==========================================
+
+awards:
+  title: "Awards & Honors"
+  intro: |
+    My research has garnered awards, fellowships, and grants
+    from organizations in measurement, psychology and education.
+    Selected honors include:
+
+  papers:
+    - title: "American Educational Research Association Division G Early Career Scholar Award"
+    - title: "American Psychological Association Division 33 Outstanding Student Research Award"
+    - title: "Howard Hughes Medical Institute Fellowship"
+    - title: "John Randolph and Dora Haynes Foundation Faculty Fellowship"
+    - title: "Spencer Foundation Research Grant"
+    - title: "Women in Measurement, Inc. Research Fellow"
+
+# ==========================================
+# MEDIA
+# ==========================================
+
+media:
+  title: "Selected Media Coverage"
+  intro: |
+    My research has been featured in national and
+    international media, including:
+
+  papers:
+    - title: "The New Yorker"
+      link: "https://www.newyorker.com/magazine/2007/12/17/none-of-the-above"
+
+    - title: "American Psychological Association"
+      link: "https://www.apa.org/news/press/releases/2003/10/flynn-effect"
+
+    - title: "Australian Broadcasting Corporation"
+      link: "https://www.abc.net.au/science/archive/articles/2003/10/20/970647.htm"
+
+    - title: "Chalkbeat"
+      link: "https://www.chalkbeat.org/2019/11/5/21109173/hit-hardest-by-texas-illegal-special-education-cap-low-income-students-of-color-study-shows/"
+
+    - title: "Newswise"
+      link: "https://www.newswise.com/articles/test-identifies-children-who-are-unreliable-witnesses"

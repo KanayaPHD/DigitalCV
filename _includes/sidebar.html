@@ -1,0 +1,38 @@
+
+{% assign sidebar = site.data.data.sidebar %}
+
+<div class="sidebar-wrapper">
+
+  <div class="profile-container">
+
+    {% if sidebar.avatar %}
+    <img
+      class="avatar"
+      src="{{ site.baseurl }}/assets/images/{{ sidebar.avatar }}"
+      alt="Portrait of Tomoe Kanaya"
+    >
+    {% endif %}
+
+    <h1 class="name">{{ sidebar.name }}</h1>
+
+    {% if sidebar.tagline %}
+      {% assign titles = sidebar.tagline | split: "|" %}
+
+      <div class="tagline">
+        {% for title in titles %}
+          <div>{{ title }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </div>
+
+  {% include contact.html %}
+
+  {% if sidebar.education %}
+    {% include education.html %}
+  {% endif %}
+
+  {% include professional-experience.html %}
+
+</div>

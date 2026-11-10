@@ -1,0 +1,59 @@
+
+{% assign experiences = site.data.data.experiences %}
+{% if experiences %}
+<section class="section experiences-section">
+
+  <h2 class="section-title">
+    <span class="fa-stack fa-xs">
+      <i class="fas fa-circle fa-stack-2x"></i>
+      <i class="fas fa-lightbulb fa-stack-1x fa-inverse"></i>
+    </span>
+    {{ experiences.title }}
+  </h2>
+
+  {% for experience in experiences.info %}
+  <div class="item">
+
+    <div class="meta">
+      <div class="upper-row">
+        <h3 class="job-title"
+            style="font-weight: 700;">
+          {{ experience.role }}
+        </h3>
+      </div>
+    </div>
+
+    {% if experience.details %}
+    <div class="details">
+      {{ experience.details | markdownify }}
+    </div>
+    {% endif %}
+
+    {% if experience.papers %}
+    <div class="selected-work"
+         style="margin-top: 12px;">
+
+      <div style="font-weight: 400;
+                  margin-bottom: 8px;">
+        Selected Work
+      </div>
+
+      {% for paper in experience.papers %}
+      <div class="reference"
+           style="margin-left: 24px;
+                  margin-bottom: 12px;">
+        <div style="padding-left: 16px;
+                    text-indent: -16px;">
+          {{ paper.citation | markdownify }}
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+    {% endif %}
+
+  </div>
+  {% endfor %}
+
+</section>
+{% endif %}

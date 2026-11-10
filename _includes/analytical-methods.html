@@ -1,0 +1,54 @@
+
+{% assign methods = site.data.data.analytical_methods %}
+{% if methods %}
+<section class="section experiences-section">
+
+  <h2 class="section-title">
+    <span class="fa-stack fa-xs">
+      <i class="fas fa-circle fa-stack-2x"></i>
+      <i class="fas fa-chart-line fa-stack-1x fa-inverse"></i>
+    </span>
+    {{ methods.title }}
+  </h2>
+
+  {% for method in methods.info %}
+  <div class="item">
+
+    <div class="meta">
+      <div class="upper-row">
+        <h3 class="job-title" style="font-weight: 700;">
+          {{ method.role }}
+        </h3>
+      </div>
+    </div>
+
+    {% if method.details %}
+    <div class="details">
+      {{ method.details | markdownify }}
+    </div>
+    {% endif %}
+
+    {% if method.papers %}
+    <div class="selected-work" style="margin-top: 12px;">
+
+      <div style="font-weight: 400; margin-bottom: 8px;">
+        Selected Work
+      </div>
+
+      {% for paper in method.papers %}
+      <div class="reference"
+           style="margin-left: 24px; margin-bottom: 12px;">
+        <div style="padding-left: 16px; text-indent: -16px;">
+          {{ paper.citation | markdownify }}
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+    {% endif %}
+
+  </div>
+  {% endfor %}
+
+</section>
+{% endif %}

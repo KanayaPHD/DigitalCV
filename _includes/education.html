@@ -1,0 +1,39 @@
+
+{% assign education = site.data.data.education %}
+
+{% if education %}
+<div class="education-container container-block">
+
+  <h2 class="container-block-title">
+    {{ education.title }}
+  </h2>
+
+  {% for item in education.info %}
+  <div class="item">
+
+    <div class="education-heading">
+      <span class="degree">{{ item.degree }}</span>
+      <span class="education-university">{{ item.university }}</span>
+    </div>
+
+    <div class="education-details">
+      {% if item.field %}
+      <div class="education-field">{{ item.field }}</div>
+      {% endif %}
+
+      {% if item.minor %}
+      <div class="education-minor">{{ item.minor }}</div>
+      {% endif %}
+
+      {% if item.dates %}
+      <div class="sidebar-dates" style="font-size: 13px; opacity: 0.85; margin-top: 5px;">
+        {{ item.dates }}
+      </div>
+      {% endif %}
+    </div>
+
+  </div>
+  {% endfor %}
+
+</div>
+{% endif %}

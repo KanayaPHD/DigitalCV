@@ -1,0 +1,55 @@
+
+{% assign media = site.data.data.media %}
+
+{% if media %}
+<section class="section publications-section">
+
+  <h2 class="section-title">
+    <span class="fa-stack fa-xs">
+      <i class="fas fa-circle fa-stack-2x"></i>
+      <i class="fas fa-tower-broadcast fa-stack-1x fa-inverse"></i>
+    </span>
+    {{ media.title }}
+  </h2>
+
+  {% if media.intro %}
+  <div class="intro">
+    {{ media.intro | markdownify }}
+  </div>
+  {% endif %}
+
+  <ul class="media-list"
+      style="list-style: none; padding-left: 0;
+             margin-top: 20px;">
+
+    {% for item in media.papers %}
+    <li style="margin-bottom: 9px;">
+
+      {% if item.link %}
+      <a href="{{ item.link }}"
+         target="_blank"
+         rel="noopener noreferrer"
+         style="text-decoration: underline;
+                text-underline-offset: 3px;">
+
+        {{ item.title }}
+
+        <i class="fas fa-external-link-alt"
+           aria-hidden="true"
+           style="font-size: 0.65em;
+                  margin-left: 3px;
+                  opacity: 0.5;
+                  text-decoration: none;"></i>
+      </a>
+
+      {% else %}
+        {{ item.title }}
+      {% endif %}
+
+    </li>
+    {% endfor %}
+
+  </ul>
+
+</section>
+{% endif %}

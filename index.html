@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+{% include career-profile.html %}
+
+{% include analytical-methods.html %}
+
+{% unless site.data.data.sidebar.education %}
+  {% include education.html %}
+{% endunless %}
+
+{% include experiences.html %}
+
+<p class="student-author-note"
+   style="font-size: 0.85em;
+          color: #777;
+          margin-top: 20px;
+          margin-bottom: 20px;">
+  &#42; Denotes student co-author/mentee.
+</p>
+
+{% include awards.html %}
+
+{% include media.html %}

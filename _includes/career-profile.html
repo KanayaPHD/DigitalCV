@@ -1,0 +1,58 @@
+
+{% assign career = site.data.data.career-profile %}
+
+{% if career %}
+<section class="section summary-section">
+
+  <h2 class="section-title">
+    <span class="icon-holder">
+      <i class="fas fa-user"></i>
+    </span>
+    {{ career.title }}
+  </h2>
+
+  <div class="summary">
+
+    {{ career.summary | markdownify }}
+
+    {% if career.cv_link %}
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var summary = document.querySelector(".summary-section .summary");
+        var paragraphs = summary.querySelectorAll("p");
+        var lastParagraph = paragraphs[paragraphs.length - 1];
+
+        if (lastParagraph) {
+          lastParagraph.insertAdjacentHTML(
+            "beforeend",
+            ' For a complete record of my work, please <a class="full-cv-link" href="{{ career.cv_link | relative_url }}" target="_blank" rel="noopener noreferrer">view my full CV</a>.'
+          );
+        }
+      });
+    </script>
+    {% endif %}
+
+  </div>
+
+</section>
+
+<style>
+.summary-section .summary p + p {
+  margin-top: 30px;
+}
+
+.summary-section .full-cv-link,
+.summary-section .full-cv-link:visited {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.summary-section .full-cv-link:hover {
+  color: inherit;
+  text-decoration-thickness: 2px;
+}
+</style>
+
+{% endif %}
