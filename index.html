@@ -25,7 +25,6 @@ layout: default
     padding: 0;
     color: inherit;
     font: inherit;
-    font-weight: inherit;
     cursor: pointer;
     text-align: left;
   }
@@ -54,7 +53,7 @@ layout: default
   .student-note {
     font-size: .85em;
     color: #777;
-    margin: 4px 0 16px !important;
+    margin: 4px 0 40px !important;
   }
 
   .experiences-section:has(+ .student-note) {
@@ -93,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       button.onclick = () => {
         pubs.hidden = !pubs.hidden;
-        button.setAttribute('aria-expanded', !pubs.hidden);
+        button.setAttribute('aria-expanded', String(!pubs.hidden));
       };
     });
 });
