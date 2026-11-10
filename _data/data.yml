@@ -14,7 +14,7 @@ sidebar:
   linkedin: "https://www.linkedin.com/in/tomoe-kanaya-ph-d-29089115a/"
   orcid: "https://orcid.org/0000-0002-5105-2893"
   google_scholar: "https://scholar.google.com/citations?user=9osbCasAAAAJ&hl=en&oi=ao"
-  pdf: 
+  pdf:
 
 
 
@@ -31,8 +31,8 @@ career-profile:
     and workflows.
 
     Rather than presenting a traditional CV, I've organized this website by research area and
-    analytical method, providing selected examples of my publications and presentations to
-    illustrate the breadth of my experience.
+    analytical method. Each section highlights my expertise and its applications; select a
+    topic to view related work.
 
   cv_text: "For a complete record of my work, please view my full CV."
   cv_link: "/assets/pdf/Tomoe_Kanaya_CV.pdf"
@@ -71,12 +71,10 @@ professional_experience:
     - title: "AI Decision & Data Scientist"
       specialty: "Senior Manager"
       organization: "Accenture Song"
- 
 
     - title: "Director"
       specialty: "Berger Institute for Work, Family and Children"
       organization: "Claremont McKenna College"
-
 
     - title: "Research Associate"
       specialty: "Center for Children and Technology"

@@ -1,3 +1,4 @@
+
 ---
 layout: default
 ---
@@ -12,7 +13,9 @@ layout: default
 
 {% include experiences.html %}
 
-<p class="student-author-note">
+<p class="student-author-note"
+   style="font-size: 0.85em; color: #777;
+          margin-top: 4px; margin-bottom: 16px;">
   &#42; Denotes student co-author/mentee.
 </p>
 
@@ -21,107 +24,143 @@ layout: default
 {% include media.html %}
 
 <style>
-  /* Expandable publication lists */
-  details.selected-work-collapse {
-    margin-top: 12px;
-    margin-bottom: 8px;
-    border-top: 1px solid #e5e8eb;
-  }
+  /* CLICKABLE RESEARCH TOPIC TITLES */
 
-  details.selected-work-collapse > summary {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 0;
+  .research-topic-toggle {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 9px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-weight: inherit;
+    text-align: left;
     cursor: pointer;
-    list-style: none;
-    color: #3f5f73;
-    font-weight: 600;
   }
 
-  details.selected-work-collapse > summary::-webkit-details-marker {
-    display: none;
-  }
-
-  details.selected-work-collapse > summary::after {
-    content: "⌄";
-    margin-left: auto;
-    font-size: 20px;
-    line-height: 1;
-    transition: transform 0.2s ease;
-  }
-
-  details.selected-work-collapse[open] > summary::after {
-    transform: rotate(180deg);
-  }
-
-  details.selected-work-collapse > summary:hover {
+  .research-topic-toggle:hover,
+  .research-topic-toggle:focus-visible {
     color: #16839a;
   }
 
-  details.selected-work-collapse > summary:focus-visible {
+  .research-topic-toggle:focus-visible {
     outline: 2px solid #16839a;
-    outline-offset: 3px;
+    outline-offset: 4px;
   }
 
-  .selected-work-collapse .work-hint {
-    font-size: 0.8em;
-    font-weight: 400;
-    color: #777;
+  /* SMALL CHEVRON AFTER EACH TITLE */
+
+  .research-topic-toggle::after {
+    content: "";
+    display: inline-block;
+    flex: 0 0 7px;
+    width: 7px;
+    height: 7px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform 0.2s ease;
+    opacity: 0.7;
   }
 
-  .selected-work-collapse .work-content {
-    padding: 4px 0 2px;
+  .research-topic-toggle[aria-expanded="true"]::after {
+    transform: translateY(2px) rotate(225deg);
   }
 
-  /* Reduce spacing before student co-author note */
+  /* HIDDEN PUBLICATIONS AND PRESENTATIONS */
+
+  .research-work-content {
+    margin-top: 12px;
+    padding: 0;
+  }
+
+  .research-work-content[hidden] {
+    display: none !important;
+  }
+
+  /* PRESERVE CITATION FORMATTING */
+
+  .research-work-content .reference {
+    margin-left: 24px;
+    margin-bottom: 12px;
+  }
+
+  /* REDUCE SPACE BEFORE STUDENT NOTE */
+
   .student-author-note {
-    font-size: 0.85em;
-    color: #777;
     margin-top: 4px !important;
-    margin-bottom: 16px;
+    margin-bottom: 16px !important;
   }
 
   .experiences-section:has(+ .student-author-note) {
     margin-bottom: 4px;
   }
+
+  .experiences-section:has(+ .student-author-note)
+  > .item:last-child {
+    margin-bottom: 0;
+  }
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.selected-work').forEach(function (section) {
-      var details = document.createElement('details');
-      details.className = 'selected-work-collapse';
+document.addEventListener('DOMContentLoaded', function () {
 
-      var summary = document.createElement('summary');
+  /* APPLY TO ALL RESEARCH TOPICS IN BOTH SECTIONS */
 
-      var title = document.createElement('span');
-      title.textContent = 'Selected Work';
+  document.querySelectorAll(
+    '.experiences-section .item'
+  ).forEach(function(item, index) {
 
-      var hint = document.createElement('span');
-      hint.className = 'work-hint';
+    var work = item.querySelector('.selected-work');
+    var heading = item.querySelector('h3.job-title');
 
-      var count = section.querySelectorAll('.reference').length;
+    if (!work || !heading) return;
 
-      hint.textContent = count +
-        (count === 1 ? ' work' : ' works') +
-        ' · Click to view';
+    var references = work.querySelectorAll('.reference');
+    if (!references.length) return;
 
-      summary.appendChild(title);
-      summary.appendChild(hint);
-      details.appendChild(summary);
+    /* CREATE CLICKABLE RESEARCH TITLE */
 
-      var content = document.createElement('div');
-      content.className = 'work-content';
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'research-topic-toggle';
+    button.innerHTML = heading.innerHTML;
 
-      Array.from(section.children).forEach(function (child) {
-        if (child.classList.contains('reference')) {
-          content.appendChild(child);
-        }
-      });
+    button.setAttribute('aria-expanded', 'false');
 
-      details.appendChild(content);
-      section.replaceWith(details);
+    /* CREATE COLLAPSED PUBLICATION CONTAINER */
+
+    var content = document.createElement('div');
+    content.className = 'research-work-content';
+    content.id = 'research-work-' + index;
+    content.hidden = true;
+
+    references.forEach(function(reference) {
+      content.appendChild(reference);
     });
+
+    button.setAttribute('aria-controls', content.id);
+
+    heading.replaceChildren(button);
+    work.replaceWith(content);
+
+    /* CLICK TO EXPAND OR COLLAPSE */
+
+    button.addEventListener('click', function() {
+      var expanded =
+        button.getAttribute('aria-expanded') === 'true';
+
+      content.hidden = expanded;
+
+      button.setAttribute(
+        'aria-expanded',
+        String(!expanded)
+      );
+    });
+
   });
+
+});
 </script>
