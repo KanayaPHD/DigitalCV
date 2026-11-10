@@ -85,7 +85,7 @@ analytical_methods:
     - role: AI, Machine Learning & NLP
       details: |
         Explore how computational methods can reveal patterns in
-        language, cognition, and behavior. Apply natural language
+        language, learning, and behavior. Apply natural language
         processing and machine learning to analyze complex data and
         investigate opportunities for AI-supported research and assessment.
       papers:
@@ -124,8 +124,8 @@ analytical_methods:
 
     - role: Experimental & Survey Design
       details: |
-        Design rigorous studies that uncover how people think, learn,
-        and make decisions. Combine experimental and survey methods
+        Design rigorous studies that examine motivation, memory and decisions making. 
+        Combine experimental and survey methods
         to test hypotheses, identify meaningful patterns, and
         translate findings into evidence-based recommendations.
       papers:
@@ -149,9 +149,8 @@ experiences:
       details: |
         Examine how program design and user experience influence
         technology adoption. Compare training formats to identify
-        approaches associated with greater adoption, investigate
-        barriers teachers face when using digital assessment tools,
-        and develop evidence-based recommendations for improvement.
+        approaches associated with greater adoption and develop 
+        recommendations for improvement.
       papers:
         - citation: >-
             Kanaya, T., Light, D., & Culp, K. M. (2005).
@@ -168,7 +167,7 @@ experiences:
 
     - role: Measurement & Assessment
       details: |
-        Develop measures of cognitive processes and motivation, emphasizing validity,
+        Develop measures of cognitive processes, emphasizing validity,
         reliability, and fairness. Identify scalable assessment practices that accurately
         measure abilities, behaviors, and outcomes.
       papers:
@@ -189,7 +188,7 @@ experiences:
         Evaluate the effectiveness and return on investment of
         programs, identifying opportunities for improvement.
         Analyze publicly available datasets to investigate
-        policy-related questions, examine outcomes, and inform
+        policy-related questions and inform
         evidence-based recommendations.
       papers:
         - citation: >-
