@@ -1,11 +1,9 @@
 ---
-
 ---
 
 @charset "utf-8";
 
-
-// define variable with front matter
+// Resume and sidebar positions
 {% if site.data.data.sidebar.position == 'left' %}
 $resume-order: 2;
 $sidebar-order: 1;
@@ -14,7 +12,8 @@ $resume-order: 1;
 $sidebar-order: 2;
 {% endif %}
 
-@import "skins/{{ site.theme_skin | default: 'blue' }}"; // skin
-@import "default"; // main partials
+// Theme color
+@import "skins/{{ site.theme_skin | default: 'blue' }}";
 
-
+// Main resume styles
+@import "default";
