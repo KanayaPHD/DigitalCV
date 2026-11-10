@@ -14,6 +14,6 @@ Commit/pushes have to be named before they are pushed in github.dev
 
 Online changes can be seen by going to Settings-Pages-Branch (choose master, save)
 
-When all changes are made, go to yaml and change "baseurl" to new repo name.
+When all changes are made, go to config.yaml and change "baseurl" to new repo name, and tab to "Kanaya CV"
 
 Click on "Save as Template" and save under new repo name. 
