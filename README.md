@@ -10,6 +10,8 @@ Deleted several folders (language.html, etc)
 
 All changes were made on github.dev, which eliminated the need to download Ruby, etc. 
 
+IMPORTANT LESSON: make sure index.html row 1 is NOT blank
+
 Commit/pushes have to be named before they are pushed in github.dev
 
 Online changes can be seen by going to Settings-Pages-Branch (choose master, save)
