@@ -29,22 +29,26 @@
     {% endif %}
 
     {% if method.papers %}
-    <div class="selected-work" style="margin-top: 12px;">
+    <details class="selected-work-collapse">
 
-      <div style="font-weight: 400; margin-bottom: 8px;">
-        Selected Work
-      </div>
+      <summary>
+        <span>Selected Work</span>
+        <span class="work-count">
+          {{ method.papers.size }} works · Click to view
+        </span>
+      </summary>
 
-      {% for paper in method.papers %}
-      <div class="reference"
-           style="margin-left: 24px; margin-bottom: 12px;">
-        <div style="padding-left: 16px; text-indent: -16px;">
-          {{ paper.citation | markdownify }}
+      <div class="publication-list">
+        {% for paper in method.papers %}
+        <div class="reference">
+          <div class="citation-text">
+            {{ paper.citation | markdownify }}
+          </div>
         </div>
+        {% endfor %}
       </div>
-      {% endfor %}
 
-    </div>
+    </details>
     {% endif %}
 
   </div>

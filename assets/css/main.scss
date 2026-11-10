@@ -17,3 +17,81 @@ $sidebar-order: 2;
 
 // Main resume styles
 @import "default";
+
+
+/* COLLAPSIBLE SELECTED WORK */
+
+.selected-work-collapse {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  border-top: 1px solid #e5e8eb;
+}
+
+.selected-work-collapse summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+  cursor: pointer;
+  font-weight: 500;
+  color: #3f5f73;
+  list-style: none;
+  transition: color 0.2s ease;
+}
+
+.selected-work-collapse summary::-webkit-details-marker {
+  display: none;
+}
+
+.selected-work-collapse summary::after {
+  content: "⌄";
+  margin-left: auto;
+  font-size: 20px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.selected-work-collapse[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.selected-work-collapse summary:hover {
+  color: #16839a;
+}
+
+.selected-work-collapse summary:focus-visible {
+  outline: 2px solid #16839a;
+  outline-offset: 3px;
+}
+
+.work-count {
+  font-size: 0.8em;
+  font-weight: 400;
+  color: #888;
+}
+
+.publication-list {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.publication-list .reference {
+  margin-left: 24px;
+  margin-bottom: 12px;
+}
+
+.publication-list .citation-text {
+  padding-left: 16px;
+  text-indent: -16px;
+}
+
+/* REDUCE SPACE BEFORE STUDENT NOTE */
+
+.student-author-note {
+  margin-top: 4px !important;
+  margin-bottom: 16px !important;
+}
+
+.experiences-section:has(+ .student-author-note) {
+  margin-bottom: 8px;
+}
