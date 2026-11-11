@@ -85,7 +85,7 @@ analytical_methods:
     - role: AI, Machine Learning & NLP
       details: |
         Explore how computational methods can reveal patterns in
-        language, learning, and behavior. Apply natural language
+        language, learning, attention, and behavior. Apply natural language
         processing and machine learning to analyze complex data and
         investigate opportunities for AI-supported research and assessment.
       papers:
@@ -104,10 +104,9 @@ analytical_methods:
 
     - role: Statistical & Longitudinal Modeling
       details: |
-        Use advanced statistical techniques to uncover relationships,
-        examine change over time, and make sense of complex behavioral
-        data. Expertise includes structural equation modeling, growth
-        curve analysis, and propensity score methods.
+        Use advanced statistical techniques to uncover relationships and 
+        examine change over time. Expertise includes structural equation modeling, growth
+        curve analysis, ANOVA, binomial regression, hierarchical linear modeling, and propensity score analyses.
       papers:
         - citation: >-
             Kanaya, T., Wai, J., & Miranda, B. (2019).
@@ -124,7 +123,7 @@ analytical_methods:
 
     - role: Experimental & Survey Design
       details: |
-        Design rigorous studies that examine motivation, memory, and decisions making. 
+        Design rigorous studies that examine motivation, memory, self-efficacy, and decisions making. 
         Combine experimental and survey methods
         to test hypotheses, identify meaningful patterns, and
         translate findings into evidence-based recommendations.
@@ -168,8 +167,8 @@ experiences:
     - role: Measurement & Assessment
       details: |
         Develop measures of cognitive processes, emphasizing validity,
-        reliability, and fairness. Identify scalable assessment practices that accurately
-        measure abilities, behaviors, and outcomes.
+        reliability, rigor, and fairness. Identify scalable assessment practices that accurately
+        measure abilities and outcomes.
       papers:
         - citation: >-
             Kanaya, T., & Ceci, S. J. (2007).
