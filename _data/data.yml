@@ -35,6 +35,8 @@ career-profile:
   cv_text: "For a complete record of my work, please view my full CV."
   cv_link: "/assets/pdf/Tomoe_Kanaya_CV.pdf"
 
+  research_text: "To see my current projects, please go to my research website."
+  research_link: "https://tkanayaphd.wixsite.com/researchlab"
 
 education:
   title: Education
